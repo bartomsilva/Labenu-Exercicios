@@ -16,3 +16,10 @@
     height: 90px;
     background-color: orange;
 }
+#item{
+    background-color: brown;
+}
+
+p{
+    pointer-events: none;
+}

@@ -1,27 +1,13 @@
-{/* <article class="item" onclick="removeItem(event)"></article>
 
-<button id="botao" onclick="adicionaItem(event)">Adicionar mais um item</button>
-<button id="botao" onclick="estilizacao(event)">Estilização</button> */}
-
-function adicionaItem() {
+function addItem() {
     const $container = document.querySelector(".container")
     const $newObj = document.createElement("div")
-    $newObj.setAttribute('class','newObj')
-    $newObj.setAttribute('onclick','removeItem(event)')
-    $newObj.innerHTML =
+    const html =
     `
-        <p>criado pelo JS</p>
-        
+        <div class='item' id='item' onclick='removeItem(event)'>  
+        </div>
     `
-    $container.appendChild($newObj)
-}
-
-function estilizacao(){
-    $estilizar = document.querySelectorAll('.newObj')
-    $estilizar.forEach(element => {
-        element.classList.remove('newObj')
-        element.classList.add('item')        
-    });
+    $container.innerHTML += html
 }
 
 function removeItem(event) {
