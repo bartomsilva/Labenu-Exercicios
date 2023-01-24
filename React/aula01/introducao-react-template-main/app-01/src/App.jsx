@@ -17,7 +17,7 @@ function App() {
           <a href="https://labenu.com.br">Site da Labenu</a>
         </div>
         <div>
-          <button onclick={onClickBotao}> Clique aqui! </button>
+          <button onClick={onClickBotao}> Clique aqui! </button>
         </div>
       </div>
     </div>
