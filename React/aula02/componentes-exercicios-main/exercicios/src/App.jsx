@@ -24,9 +24,7 @@ export default function App() {
               <li className="botoes-meunu-vertical">Histórico</li>
             </ul>
           </nav>
-          <Cardvideo/>
-
-          
+          <Cardvideo/>          
         </main>
 
         <footer>
