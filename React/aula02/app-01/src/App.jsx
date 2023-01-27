@@ -10,10 +10,7 @@ function App() {
     <>
       <Header />
       
-      <main>
-        <div className="App">
-          <h1>Aula - Componentes React</h1>
-        </div>
+      <main className='container'>
         <Garagem />
       </main>
 

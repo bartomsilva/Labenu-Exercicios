@@ -1,4 +1,4 @@
-import InfosUsuario from "./InfosUsuario";
+import InfoUser from "./InfosUsuario";
 
 export default function Cardvideo() {
 
@@ -13,34 +13,42 @@ export default function Cardvideo() {
             <div className="box-pagina-principal" onClick={reproduzVideo}>
                 <img src="https://picsum.photos/400/400?a=1 " alt="" />
                 <h4>{titulo}</h4>
+                <InfoUser/>
             </div>
             <div className="box-pagina-principal" onClick={reproduzVideo}>
-                <img src="https://picsum.photos/400/400?a=2 " alt="" />
+                <img src="https://picsum.photos/400/400?a=1 " alt="" />
                 <h4>{titulo}</h4>
+                <InfoUser/>
             </div>
             <div className="box-pagina-principal" onClick={reproduzVideo}>
-                <img src="https://picsum.photos/400/400?a=3 " alt="" />
+                <img src="https://picsum.photos/400/400?a=1 " alt="" />
                 <h4>{titulo}</h4>
+                <InfoUser/>
             </div>
             <div className="box-pagina-principal" onClick={reproduzVideo}>
-                <img src="https://picsum.photos/400/400?a=4 " alt="" />
+                <img src="https://picsum.photos/400/400?a=1 " alt="" />
                 <h4>{titulo}</h4>
+                <InfoUser/>
             </div>
             <div className="box-pagina-principal" onClick={reproduzVideo}>
-                <img src="https://picsum.photos/400/400?a=5 " alt="" />
+                <img src="https://picsum.photos/400/400?a=1 " alt="" />
                 <h4>{titulo}</h4>
+                <InfoUser/>
             </div>
             <div className="box-pagina-principal" onClick={reproduzVideo}>
-                <img src="https://picsum.photos/400/400?a=6 " alt="" />
+                <img src="https://picsum.photos/400/400?a=1 " alt="" />
                 <h4>{titulo}</h4>
+                <InfoUser/>
             </div>
             <div className="box-pagina-principal" onClick={reproduzVideo}>
-                <img src="https://picsum.photos/400/400?a=7 " alt="" />
+                <img src="https://picsum.photos/400/400?a=1 " alt="" />
                 <h4>{titulo}</h4>
+                <InfoUser/>
             </div>
             <div className="box-pagina-principal" onClick={reproduzVideo}>
-                <img src="https://picsum.photos/400/400?a=8 " alt="" />
+                <img src="https://picsum.photos/400/400?a=1 " alt="" />
                 <h4>{titulo}</h4>
+                <InfoUser/>
             </div>
         </section>
     )

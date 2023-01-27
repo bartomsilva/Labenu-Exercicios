@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import Cardvideo from "./components/CardVideo";
+import CardVideo from "./components/CardVideo";
 
 export default function App() {
   // const titulo = "Título do vídeo";
@@ -24,7 +24,7 @@ export default function App() {
               <li className="botoes-meunu-vertical">Histórico</li>
             </ul>
           </nav>
-          <Cardvideo/>          
+          <CardVideo/>          
         </main>
 
         <footer>
