@@ -1,0 +1,139 @@
+main {
+  display: flex;
+}
+
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  background: var(--darkOrange);
+  padding: 100px 10% 100px 10%;
+  border-bottom: 2px solid #000;
+  min-height: 797px;
+}
+
+@media (max-width: 1366px) {
+  .wrapper {
+    padding: 100px 5% 100px 5%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 550px) {
+  .wrapper {
+    padding: 40px 10px 40px 10px;
+    min-height: 650px;
+  }
+}
+
+.wrapper .financial h1,
+.wrapper .student-report h1 {
+  margin-block-end: 20px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 1366px) {
+  .wrapper .financial h1,
+  .wrapper .student-report h1 {
+    font-size: 1.4rem;
+  }
+}
+
+.wrapper .financial form,
+.wrapper .student-report form {
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+}
+
+@media (max-width: 1366px) {
+  .wrapper .financial form,
+  .wrapper .student-report form {
+    width: 320px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .wrapper .financial form,
+  .wrapper .student-report form {
+    width: 380px;
+  }
+}
+
+@media (max-width: 550px) {
+  .wrapper .financial form,
+  .wrapper .student-report form {
+    width: 310px;
+  }
+}
+
+.wrapper .financial form label,
+.wrapper .student-report form label {
+  font-weight: bold;
+}
+
+.wrapper .financial form input,
+.wrapper .student-report form input {
+  height: 35px;
+  border-radius: 4px;
+  border: none;
+  margin-block-end: 15px;
+  font-size: 1.1rem;
+  padding: 0 10px;
+}
+
+.wrapper .financial form button,
+.wrapper .student-report form button {
+  margin-block-start: 20px;
+}
+
+.wrapper .form-result {
+  margin-block-start: 80px;
+}
+
+@media (max-width: 1024px) {
+  .wrapper .form-result {
+    margin-block-start: 40px;
+  }
+}
+
+.wrapper .form-result h1 {
+  margin-block-end: 5px;
+}
+
+.wrapper .form-result p {
+  font-size: 1.1rem;
+  width: 380px;
+}
+
+@media (max-width: 1024px) {
+  .student-report {
+    margin-block-start: 40px;
+  }
+}
+
+.student-report .form-result p {
+  font-weight: bold;
+}
+
+.student-report .form-result p span {
+  font-weight: normal;
+}
+
+.clear-btn {
+  margin-block-start: 30px;
+  background: #c20000;
+  border: none;
+  margin-block-end: 40px;
+}
+
+.clear-btn:is(:hover, :active) {
+  background: #a70000;
+}

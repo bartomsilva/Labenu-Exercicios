@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./src/styles/footer.css" />
+    <link rel="stylesheet" href="./src/styles/global.css" />
+    <link rel="stylesheet" href="./src/styles/header.css" />
+    <link rel="stylesheet" href="./src/styles/sidebar.css" />
+    <link rel="stylesheet" href="./src/styles/financial.css" />
+    <link rel="stylesheet" href="./src/styles/adm-buger-menu.css" />
+    <title>Financeiro Alunos</title>
+  </head>
+  <body>
+    <header class="header">
+      <a class="logo" href="index.html">
+        <img src="src/img/header/logo-1.png" alt="LabEscola logo" />
+      </a>
+      <nav>
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="adm.html">Área ADM</a></li>
+        </ul>
+      </nav>
+      <div class="toggle-menu">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+      </div>
+      <nav class="mobile-nav">
+        <ul class="nav-list">
+          <li class="nav-list-item">
+            <a href="/index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-list-item">
+            <a href="/cursos.html" class="nav-link">Cursos</a>
+          </li>
+          <li class="nav-list-item">
+            <a href="/contato.html" class="nav-link">Contato</a>
+          </li>
+          <li class="nav-list-item">
+            <a href="/adm.html" class="nav-link">Area ADM</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <nav class="sidebar">
+        <ul>
+          <li><a href="adm.html">Turmas</a></li>
+          <li><a href="matriculas.html">Matriculas</a></li>
+          <li><a href="financeiro.html">Financeiro Alunos</a></li>
+        </ul>
+      </nav>
+      <div class="wrapper">
+        <div class="financial">
+          <h1>Financeiro</h1>
+          <form class="shop-cart-form" action="">
+            <label for="course">Curso</label>
+            <input
+              class="shop-cart-course"
+              type="text"
+              name="course"
+              list="courseName"
+              required
+            />
+            <datalist id="courseName">
+              <option value="JavaScript"></option>
+              <option value="HTML e CSS"></option>
+              <option value="APIsRest"></option>
+            </datalist>
+            <label for="installments">Número de parcelas</label>
+            <input
+              type="number"
+              name="installments"
+              class="installments"
+              required
+              min="1"
+              max="12"
+              list="installmentOptions"
+            />
+            <datalist id="installmentOptions">
+              <option value="1"></option>
+              <option value="2"></option>
+              <option value="3"></option>
+              <option value="4"></option>
+              <option value="5"></option>
+              <option value="6"></option>
+              <option value="7"></option>
+              <option value="8"></option>
+              <option value="9"></option>
+              <option value="10"></option>
+              <option value="11"></option>
+              <option value="12"></option>
+            </datalist>
+            <button class="secondary-button" type="submit">Ver valor</button>
+          </form>
+          <div class="installment-form-result form-result"></div>
+        </div>
+        <div class="student-report">
+          <h1>Relatório Aluno</h1>
+          <form class="student-report-form" action="">
+            <label for="name">Nome</label>
+            <input
+              type="search"
+              name="name"
+              class="studentName"
+              minlength="3"
+              required
+            />
+            <button class="secondary-button" type="submit">Buscar</button>
+          </form>
+          <div class="form-result student-report-result"></div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="map">
+          <img
+            class="footer-logo"
+            src="./src/img/footer/logo-2.svg"
+            alt="LabEscola logo"
+          />
+          <h1>Endereço</h1>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.9962772954646!2d-46.700690885056495!3d-23.568577184679288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57a7c7ace4c3%3A0x586759cab9b5c95a!2sR.%20Pais%20Leme%2C%20215%20-%20Pinheiros%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005424-150!5e0!3m2!1sen!2sbr!4v1674846379026!5m2!1sen!2sbr"
+              allowfullscreen=""
+              loading="lazy"
+              style="border: 0"
+              height="100%"
+              width="100%"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <p>R. Pais Leme, 215. CEP 05424-150 - Pinheiros</p>
+        </div>
+        <div class="links footer-section">
+          <h1>Links</h1>
+          <ul>
+            <li><a class="footer-link" href="/index.html">Home</a></li>
+            <li><a class="footer-link" href="/cursos.html">Cursos</a></li>
+            <li><a class="footer-link" href="#">Blog</a></li>
+            <li>
+              <a class="footer-link" href="/contato.html">Fale conosco</a>
+            </li>
+            <li><a class="footer-link" href="#">Termos e condições</a></li>
+            <li><a class="footer-link" href="#">Política de privacidade</a></li>
+            <li><a class="footer-link" href="/faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="social-media footer-section">
+          <h1>Redes sociais</h1>
+          <ul>
+            <li>
+              <a href="https://twitter.com/" target="_blank" rel="noreferrer"
+                ><img src="./src/img/footer/twitter.svg" alt=""
+              /></a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noreferrer"
+                ><img src="./src/img/footer/instagram.svg" alt=""
+              /></a>
+            </li>
+            <li>
+              <a
+                href="https://pt-br.facebook.com/"
+                target="_blank"
+                rel="noreferrer"
+                ><img src="./src/img/footer/facebook.svg" alt=""
+              /></a>
+            </li>
+            <li>
+              <a
+                href="https://www.whatsapp.com/"
+                target="_blank"
+                rel="noreferrer"
+                ><img src="./src/img/footer/whatsapp.svg" alt=""
+              /></a>
+            </li>
+          </ul>
+        </div>
+        <div class="restrict footer-section">
+          <h1>Área restrita</h1>
+          <ul>
+            <li>
+              <a class="footer-link" href="/adm.html">Área administrativa</a>
+            </li>
+            <li><a class="footer-link" href="#">Espaço do aluno</a></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="bottom-menu">
+          <p>Área Administrativa</p>
+          <div class="toggle-adm-btn">
+            <img class="open-btn" src="./src/img/chevron-up.svg" alt="" />
+            <img class="close-btn" src="./src/img/chevron-down.svg" alt="" />
+          </div>
+        </div>
+        <nav class="hidden-menu">
+          <ul>
+            <li><a class="hidden-menu-link" href="adm.html">Turmas</a></li>
+            <li>
+              <a class="hidden-menu-link" href="matriculas.html">Matriculas</a>
+            </li>
+            <li>
+              <a class="hidden-menu-link" href="financeiro.html"
+                >Financeiro Alunos</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+    <script src="./src/scripts/financial.js" type="module"></script>
+    <script src="./src/scripts/burgerMenu.js"></script>
+    <script src="./src/scripts/admMenu.js"></script>
+  </body>
+</html>

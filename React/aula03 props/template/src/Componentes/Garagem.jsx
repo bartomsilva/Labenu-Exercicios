@@ -1,6 +1,5 @@
 import Carro from "./Carro";
-
-function Garagem(props) {
+export default function Garagem(props) {
   return (
     <div>
       <header className="header-garage">
@@ -17,4 +16,4 @@ function Garagem(props) {
   );
 }
 
-export default Garagem;
+

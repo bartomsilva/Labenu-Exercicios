@@ -1,4 +1,4 @@
-function Carro(props) {
+export default function Carro(props) {
   return (
     <div className="car">
       <div>
@@ -16,4 +16,4 @@ function Carro(props) {
   );
 }
 
-export default Carro;
+ 

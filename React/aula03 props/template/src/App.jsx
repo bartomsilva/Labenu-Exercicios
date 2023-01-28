@@ -15,6 +15,7 @@ export default function App() {
     alert(`Boas vindas à garagem de ${name}`)
   }
   // primeira garagem
+  // car first garage
   const myCarG1 = [
   {
     carName:'Ferrari',
@@ -39,7 +40,7 @@ export default function App() {
     photo: img3
   },
   {
-    carName:'Fiat Strata Vulcano',
+    carName:'Fiat Strada Vulcano',
     carColor:'Vermelha',
     carYear: 2022,
     carFlex: false,
@@ -47,7 +48,8 @@ export default function App() {
 
   }
 ] 
-// segunda garagem
+// carros da segunda garagem
+// car second garage
 const myCarG2 = [
   {
     carName:'Ford Ka',
@@ -77,7 +79,6 @@ const myCarG2 = [
     carFlex: false,
     photo: img8
   }
-
 ] 
   return (
     <div id='garage'>
