@@ -17,66 +17,113 @@ import photo5 from './assets/avatar-diretor.jpg';
 import photo6 from "./assets/mulher-maravilha-diretor.jpg";
 import photo7 from './assets/independence-day-diretor.jpg';
 import photo8 from './assets/uma-linda-mulher-diretor.jpg';
+import imgBtnClose from './assets/close.png'
 
 export default function App() {
- const myVideos= [
-  {
-    filmTitle: "Circulo de Fogo - 2001",
-    image: img1,
-    authorName: 'Jean-Jacques Annaud',
-    authorPhoto: photo1   
-  },
-  {
-    filmTitle: "Lendas de uma Paixão - 1995",
-    image: img2,
-    authorName: 'Edward Zwick',
-    authorPhoto: photo2   
-  },
-  {
-    filmTitle: "Vinte mil leguas submarinas - 1954",
-    image: img3,
-    authorName: 'Richard Fleischer',
-    authorPhoto: photo3   
-  },
-  {
-    filmTitle: "A Lista de Schindler - 1994",
-    image: img4,
-    authorName: 'Steven Spielberg',
-    authorPhoto: photo4   
-  },
+
+
+  const myVideos = [
     {
-    filmTitle: "Avatar - 2009",
-    image: img5,
-    authorName: 'James Cameron',
-    authorPhoto: photo5   
-  },
-  {
-    filmTitle: "Mulher Maravilha - 2017",
-    image: img6,
-    authorName: 'Patty Jenkins',
-    authorPhoto: photo6   
-  },
+      filmTitle: "Circulo de Fogo - 2001",
+      image: img1,
+      authorName: 'Jean-Jacques Annaud',
+      authorPhoto: photo1,
+      link: `<iframe width="560" height="315" src="https://www.youtube.com/embed/Uc4PN3YIylw" 
+      title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+      encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
+    },
     {
-    filmTitle: "Independe Day - 1996",
-    image: img7,
-    authorName: 'Roland Emmerich',
-    authorPhoto: photo7   
-  },
+      filmTitle: "Lendas de uma Paixão - 1995",
+      image: img2,
+      authorName: 'Edward Zwick',
+      authorPhoto: photo2,
+      link: `<iframe width="560" height="315" src="https://www.youtube.com/embed/zEz3MWpDC7E" 
+      title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+      encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
+    },
     {
-    filmTitle: "Uma Linda Mulher - 1990",
-    image: img8,
-    authorName: 'Garry Marshall',
-    authorPhoto: photo8   
-  },   
- ]
+      filmTitle: "Vinte mil leguas submarinas - 1954",
+      image: img3,
+      authorName: 'Richard Fleischer',
+      authorPhoto: photo3,
+      link: `<iframe width="560" height="315" src="https://www.youtube.com/embed/tMyzDHG8o3o"
+                 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+                  encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
+    },
+    {
+      filmTitle: "A Lista de Schindler - 1994",
+      image: img4,
+      authorName: 'Steven Spielberg',
+      authorPhoto: photo4,
+      link: `<iframe width="560" height="315" src="https://www.youtube.com/embed/tSHqEBhQx8M" 
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+                clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
+    },
+    {
+      filmTitle: "Avatar - 2009",
+      image: img5,
+      authorName: 'James Cameron',
+      authorPhoto: photo5,
+      link: `<iframe width="560" height="315" src="https://www.youtube.com/embed/0Jgk65L6VxM" 
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
+    },
+    {
+      filmTitle: "Mulher Maravilha - 2017",
+      image: img6,
+      authorName: 'Patty Jenkins',
+      authorPhoto: photo6,
+      link: `<iframe width="560" height="315" src="https://www.youtube.com/embed/tqfOtQ5auBA" title="YouTube video player" 
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+     allowfullscreen></iframe>`
+    },
+    {
+      filmTitle: "Independe Day - 1996",
+      image: img7,
+      authorName: 'Roland Emmerich',
+      authorPhoto: photo7,
+      link: `<iframe width="560" height="315" src="https://www.youtube.com/embed/B1E7h3SeMDk" title="YouTube video player" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen></iframe>`
+    },
+    {
+      filmTitle: "Uma Linda Mulher - 1990",
+      image: img8,
+      authorName: 'Garry Marshall',
+      authorPhoto: photo8,
+      link: `<iframe width="560" height="315" src="https://www.youtube.com/embed/G__hjaG9b6s" title="YouTube video player"
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>`
+    },
+  ]
+
+
+  function closeFilme() {
+    const $video = document.querySelector(".video")
+    $video.innerHTML = ""
+    document.querySelector('#container-trailer').classList.toggle('hide')
+    document.querySelector('body').classList.toggle('fix')    
+  }
 
   return (
+
+
     <div>
+      <a href="#" id="foo"></a>
       <div className="tela-inteira">
+
         <header>
           <h1>LabeTube</h1>
           <input type="text" placeholder="Busca" id="campoDeBusca" />
         </header>
+        <div id="container-trailer" className="trailer hide">
+          <div id='control'>
+            <div id="video" className="video">
+            </div>
+            {/* <button className="btnClose" onClick={closeFilme}>Sair</button> */}
+            <img className="btnClose" onClick={closeFilme} src={imgBtnClose} />
+          </div>
+        </div>
 
         <main>
           <nav className="menu-vertical">
@@ -89,8 +136,9 @@ export default function App() {
               <li className="botoes-meunu-vertical">Histórico</li>
             </ul>
           </nav>
-          <CardVideo myVideo={myVideos}/>          
-          {/* <CardVideo/>           */}
+
+          <CardVideo myVideo={myVideos} closeFilme={closeFilme} />
+
         </main>
 
         <footer>
@@ -99,4 +147,9 @@ export default function App() {
       </div>
     </div>
   );
+
+
+
 }
+
+

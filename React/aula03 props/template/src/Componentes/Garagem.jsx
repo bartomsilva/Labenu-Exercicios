@@ -1,4 +1,5 @@
 import Carro from "./Carro";
+import { useId } from 'react';
 export default function Garagem(props) {
   return (
     <div>
@@ -6,12 +7,13 @@ export default function Garagem(props) {
         <h1 >Garagem de {props.nameUser}</h1>
         <button className="btnInfo" onClick={() => props.apresentaGaragem(props.nameUser)}>INFO</button>
       </header>
-      <div className="containerCar">
-        <Carro myCar={props.myCar[0]} />
-        <Carro myCar={props.myCar[1]} />
-        <Carro myCar={props.myCar[2]} />
-        <Carro myCar={props.myCar[3]} />
-      </div>
+      <main className="containerCar" >
+        {props.myCar.map((car, index) => (
+          <div key={useId()}>
+            <Carro myCar={car} apresentaGaragem={props.apresentaGaragem} nameUser={props.nameUser} />
+          </div>
+        ))}
+      </main>
     </div>
   );
 }

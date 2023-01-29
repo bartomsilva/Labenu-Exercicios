@@ -10,10 +10,12 @@ export default function Carro(props) {
         </ul>
       </div>
       <div className="car-img-container">
-        <img src={props.myCar.photo}></img>
+        <img src={props.myCar.carPhoto}
+          onClick={() => props.apresentaGaragem(props.nameUser)}>
+        </img>
       </div>
     </div>
   );
 }
 
- 
+

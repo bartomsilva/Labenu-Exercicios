@@ -1,55 +1,41 @@
 import InfoUser from "./InfosUsuario";
+import { useId } from 'react';
 
 export default function Cardvideo(props) {
 
     const titulo = "Título do vídeo";
 
-    function reproduzVideo() {
-        alert("O vídeo está sendo reproduzido");
+    const reproduzVideo = (e) => {
+        // alert("O vídeo está sendo reproduzido");
+        let nVideo = +e.target.parentNode.id[1];
+        if (nVideo >= 0) {
+            document.getElementById('container-trailer').classList.toggle('hide')
+            document.querySelector('body').classList.toggle('fix')
+            document.querySelector(".video").innerHTML += props.myVideo[nVideo].link
+            window.location.href = '#foo';
+        }
+
     }
+
+    function closeFilme() {
+        // document.querySelector(".video").innerHTML = ''
+        document.querySelector('#container-trailer').classList.toggle('hide')
+    }
+
 
     return (
         <section className="painel-de-videos">
-            <div className="box-pagina-principal" onClick={reproduzVideo}>
-                <img src={props.myVideo[0].image} alt="" />
-                <h4>{props.myVideo[0].filmTitle}</h4>
-                <InfoUser info={props.myVideo[0]}/>
-            </div>
-            <div className="box-pagina-principal" onClick={reproduzVideo}>
-            <img src={props.myVideo[1].image} alt="" />
-            <h4>{props.myVideo[1].filmTitle}</h4>
-            <InfoUser info={props.myVideo[1]}/>
-            </div>
-            <div className="box-pagina-principal" onClick={reproduzVideo}>
-            <img src={props.myVideo[2].image} alt="" />
-            <h4>{props.myVideo[2].filmTitle}</h4>
-            <InfoUser info={props.myVideo[2]}/>
-            </div>
-            <div className="box-pagina-principal" onClick={reproduzVideo}>
-            <img src={props.myVideo[3].image} alt="" />
-            <h4>{props.myVideo[3].filmTitle}</h4>
-            <InfoUser info={props.myVideo[3]}/>
-            </div>
-            <div className="box-pagina-principal" onClick={reproduzVideo}>
-            <img src={props.myVideo[4].image} alt="" />
-            <h4>{props.myVideo[4].filmTitle}</h4>
-            <InfoUser info={props.myVideo[4]}/>
-            </div>
-            <div className="box-pagina-principal" onClick={reproduzVideo}>
-            <img src={props.myVideo[5].image} alt="" />
-            <h4>{props.myVideo[5].filmTitle}</h4>
-            <InfoUser info={props.myVideo[5]}/>
-            </div>
-            <div className="box-pagina-principal" onClick={reproduzVideo}>
-            <img src={props.myVideo[6].image} alt="" />
-            <h4>{props.myVideo[6].filmTitle}</h4>
-            <InfoUser info={props.myVideo[6]}/>
-            </div>
-            <div className="box-pagina-principal" onClick={reproduzVideo}>
-            <img src={props.myVideo[7].image} alt="" />
-            <h4>{props.myVideo[7].filmTitle}</h4>
-            <InfoUser info={props.myVideo[7]}/>
-            </div>
+
+            {props.myVideo.map((video, index) => (
+                <div id={"i" + index} className="box-pagina-principal" onClick={(event) => reproduzVideo(event)} key={useId()}>
+                    <img className='cover' src={video.image} alt="" />
+                    <h4>{video.filmTitle}</h4>
+                    <InfoUser info={video} />
+                </div>
+            ))}
+
         </section>
     )
+
+
 }
