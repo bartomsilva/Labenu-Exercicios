@@ -1,6 +1,5 @@
 import React from "react";
 import "./styles.css";
-import CardVideo from "./components/CardVideo";
 import img1 from './assets/circulo-de-fogo.jpg';
 import img2 from './assets/lendas-de-uma-paixao.jpg';
 import img3 from './assets/vintemilleguassubmarinas.jpg';
@@ -18,9 +17,9 @@ import photo6 from "./assets/mulher-maravilha-diretor.jpg";
 import photo7 from './assets/independence-day-diretor.jpg';
 import photo8 from './assets/uma-linda-mulher-diretor.jpg';
 import imgBtnClose from './assets/close.png'
+import CardVideo from "./components/CardVideo";
 
 export default function App() {
-
 
   const myVideos = [
     {
@@ -97,19 +96,15 @@ export default function App() {
     },
   ]
 
-
-  function closeFilme() {
-    const $video = document.querySelector(".video")
-    $video.innerHTML = ""
+  function closeMovie() {
+    document.querySelector(".video").innerHTML = ""
     document.querySelector('#container-trailer').classList.toggle('hide')
-    document.querySelector('body').classList.toggle('fix')    
+    document.querySelector('body').classList.toggle('fix')
   }
 
   return (
-
-
     <div>
-      <a href="#" id="foo"></a>
+      <span id="foo"></span>
       <div className="tela-inteira">
 
         <header>
@@ -118,13 +113,11 @@ export default function App() {
         </header>
         <div id="container-trailer" className="trailer hide">
           <div id='control'>
-            <div id="video" className="video">
+            <div id="video" className="video hide">
             </div>
-            {/* <button className="btnClose" onClick={closeFilme}>Sair</button> */}
-            <img className="btnClose" onClick={closeFilme} src={imgBtnClose} />
+            <img className="btnClose" onClick={closeMovie} src={imgBtnClose} />
           </div>
         </div>
-
         <main>
           <nav className="menu-vertical">
             <ul>
@@ -137,19 +130,15 @@ export default function App() {
             </ul>
           </nav>
 
-          <CardVideo myVideo={myVideos} closeFilme={closeFilme} />
+          <CardVideo myVideo={myVideos}/>
 
         </main>
-
         <footer>
           <h4>Oi! Eu moro no footer!</h4>
         </footer>
       </div>
     </div>
   );
-
-
-
 }
 
 

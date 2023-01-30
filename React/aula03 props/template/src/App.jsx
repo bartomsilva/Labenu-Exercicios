@@ -1,4 +1,5 @@
 import Garagem from "./Componentes/Garagem";
+import { useId } from 'react';
 import "./App.css";
 import img1 from './assets/ferrari-vermelho.jpg'
 import img2 from './assets/bugatti-chiron.webp'
@@ -8,12 +9,15 @@ import img5 from './assets/fordka.jpg'
 import img6 from './assets/fordfreestyle.jpg'
 import img7 from './assets/fordflex.jpg'
 import img8 from './assets/peugeot.jpg'
-import { useId } from 'react';
+
 export default function App() {
+  
   const nameUsers = ['Oliver Silva', 'Perry Chatt']
+  
   const apresentaGaragem = (name) => {
     alert(`Boas vindas à garagem de ${name}`)
   }
+
   // car garage
   const myCarG = [
     [
@@ -82,7 +86,7 @@ export default function App() {
     <div id='garage' >
       {
         myCarG.map((cars, index) =>
-          <Garagem nameUser={nameUsers[index]} apresentaGaragem={apresentaGaragem} myCar={cars} key={useId()}/>
+          <Garagem nameUser={nameUsers[index]} apresentaGaragem={apresentaGaragem} cars={cars} key={useId()} />
         )
       }
     </div>
