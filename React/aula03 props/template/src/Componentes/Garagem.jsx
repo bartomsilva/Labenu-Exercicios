@@ -7,13 +7,15 @@ export default function Garagem(props) {
         <h1 >Garagem de {props.nameUser}</h1>
         <button className="btnInfo" onClick={() => props.apresentaGaragem(props.nameUser)}>INFO</button>
       </header>
+
       <main className="containerCar" >
         {props.cars.map((car) => (
           <div key={useId()}>
-            <Carro car={car} apresentaGaragem={props.apresentaGaragem} nameUser={props.nameUser} />
+            <Carro car={car}/>
           </div>
         ))}
       </main>
+
     </div>
   );
 }

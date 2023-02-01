@@ -3,8 +3,6 @@ import { useId } from 'react';
 
 export default function Cardvideo(props) {
 
-    const titulo = "Título do vídeo";
-
     const reproduzVideo = (e) => {
         let nVideo = +e.target.parentNode.id[1];
         if (nVideo >= 0) {
@@ -14,11 +12,6 @@ export default function Cardvideo(props) {
             document.querySelector(".video").innerHTML = props.myVideo[nVideo].link
             window.location.href = '#foo';
         }
-    }
-
-    function closeFilme() {
-        document.querySelector(".video").innerHTML = ''
-        document.querySelector('#container-trailer').classList.toggle('hide')
     }
 
     return (

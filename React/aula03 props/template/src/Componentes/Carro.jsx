@@ -1,4 +1,7 @@
 export default function Carro(props) {
+
+  console.log(props)
+  
   return (
     <div className="car">
       <div>
@@ -10,9 +13,7 @@ export default function Carro(props) {
         </ul>
       </div>
       <div className="car-img-container">
-        <img src={props.car.carPhoto}
-          onClick={() => props.apresentaGaragem(props.nameUser)}>
-        </img>
+        <img src={props.car.carPhoto}/>
       </div>
     </div>
   );

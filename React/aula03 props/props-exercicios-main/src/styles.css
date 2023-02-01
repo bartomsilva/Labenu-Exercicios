@@ -88,7 +88,7 @@ h4 {
 #infoUser img{
   height: 100%;
   border: 1px solid rgba(255, 255, 255, 0.6);
-  /* border-radius: 5px; */
+  border-radius: 5px; 
 }
 .cover:hover{
     cursor: pointer;
@@ -100,6 +100,7 @@ footer {
   width: 100%;
   display: flex;
   padding: 0 10px;
+  justify-content: space-between;
 }
 
 
@@ -120,8 +121,6 @@ footer {
 }
 
 #container-trailer.hide {
-  /* pointer-events:none; */
-  /* display: none;  */
   visibility: hidden;
   z-index: -1;
   border: 3px solid white;
@@ -131,7 +130,7 @@ footer {
 
 iframe {
   width: 800px;
-  border: 2px solida red;
+  border: 2px solida rgb(228, 21, 21);
 }
 
 .video {
@@ -146,19 +145,21 @@ iframe {
 }
 
 .btnClose {
-  height: 2rem;
-  font-size: 2rem;
-  line-height: 50px;
+  height: 2.5rem;
   border-radius: 0.25rem;
   background-color: brown;
-  color: white;
   border: 2px solid rgba(255, 255, 255, 0.5);
   margin-top: 0.4rem;
-  align-self: flex-end;     
-}
+  align-self: flex-end;   
+  position: fixed;
+  z-index: 9999;
+  transform: translateY(-149px);
 
-.video button:hover{
+ }
+
+.btnClose:hover{
   cursor: pointer;
+  transition: 500ms;
 }
 
 #control{

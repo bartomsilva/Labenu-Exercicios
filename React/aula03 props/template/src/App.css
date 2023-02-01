@@ -54,11 +54,7 @@ li {
   border-radius: 40%;
   border: none;
   margin: 0.5rem;
-}
-
-.btnInfo:hover {
-  transform: scale(1.1);
-
+  background-color: rgb(129, 133, 133);
 }
 
 #garage > div {
