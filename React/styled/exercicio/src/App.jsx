@@ -1,10 +1,12 @@
 import React from "react";
 import "./styles.css";
+import { GlobalStyled } from "./GlobalStyled";
 import imgBtnClose from './assets/close.png'
 import CardVideo from "./components/cardVideo/CardVideo";
 import { myVideos } from "./components/Data";
 import { useState } from "react";
 import { ContainerTrailer } from "./appstyled";
+import { TelaInteira, Header, Footer } from "./appstyled";
 
 
 export default function App() {
@@ -19,47 +21,46 @@ export default function App() {
   }
 
 
-
   return (
-    <div>
-      <span id="foo"></span>
+    <TelaInteira>
 
-      <div className="tela-inteira">
-        <header>
-          <h1>LabeTube</h1>
-          <input type="text" placeholder="Busca" id="campoDeBusca" />
-        </header>
+      <Header>
+        <span id="foo"></span>
+        <h1>LabeTube</h1>
+        <input type="text" placeholder="Busca" id="campoDeBusca" />
+      </Header>
 
-        <ContainerTrailer ver={visivel} id="container-trailer">
-          <div id='control'>
-            <div id="video">
-            </div>
-            <img className="btnClose" onClick={closeMovie} src={imgBtnClose} />
+      <ContainerTrailer ver={visivel} id="container-trailer">
+        <div id='control'>
+          <div id="video">
           </div>
-        </ContainerTrailer>
+          <img className="btnClose" onClick={closeMovie} src={imgBtnClose} />
+        </div>
+      </ContainerTrailer>
 
-        <main>
-          <nav className="menu-vertical">
-            <ul>
-              <li className="botoes-meunu-vertical">Início</li>
-              <li className="botoes-meunu-vertical">Em alta</li>
-              <li className="botoes-meunu-vertical">Inscrições</li>
-              <hr />
-              <li className="botoes-meunu-vertical">Originais</li>
-              <li className="botoes-meunu-vertical">Histórico</li>
-            </ul>
-          </nav>
-          <>
-            <CardVideo myVideo={myVideos} visible={visivel} setView={setVisivel} />
-          </>
+      <main>
+        <nav className="menu-vertical">
+          <ul>
+            <li className="botoes-meunu-vertical">Início</li>
+            <li className="botoes-meunu-vertical">Em alta</li>
+            <li className="botoes-meunu-vertical">Inscrições</li>
+            <hr />
+            <li className="botoes-meunu-vertical">Originais</li>
+            <li className="botoes-meunu-vertical">Histórico</li>
+          </ul>
+        </nav>
+        <>
+          <CardVideo myVideo={myVideos} visible={visivel} setView={setVisivel} />
+        </>
 
-        </main>
-        <footer>
-          <h4>Sucesso não vem, temos que ir buscar!</h4>
-          <h4>OZEMELA é top das galáxias!</h4>
-        </footer>
-      </div>
-    </div>
+      </main>
+
+      <Footer>
+        <h4>Sucesso não vem, temos que ir buscar!</h4>
+        <h4>OZEMELA é top das galáxias!</h4>
+      </Footer>
+
+    </TelaInteira>
   );
 }
 

@@ -1,13 +1,40 @@
 import styled from "styled-components";
 
 
+export const TelaInteira = styled.div`
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+
+`
+
+export const Header = styled.header`
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    width: 100vw;
+    height: 10vh;
+`
+
+export const Footer = styled.footer`
+    background: #333b3e;
+    color: white;
+    width: 100%;
+    display: flex;
+    padding: 0 10px;
+    justify-content: space-between;
+`
+
 export const ContainerTrailer = styled.section`
     
     visibility: ${ (props) => props.ver ? `visible` : `hidden`};
     z-index: ${ (props) => props.ver ?1:-1};
     
-    width: 100vw;
-    min-height: 100vh;
+    width: 100%;
+    min-height: 100%;
     background-color: rgba(0,0,0,.4);
     position: absolute;
     top: 0;
