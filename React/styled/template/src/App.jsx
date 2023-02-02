@@ -1,7 +1,7 @@
 import { Garagem } from "./Componentes/Garagem/Garagem";
 
 export default function App() {
-  const nome = "Labenu";
+  const nome = "Bart Silva";
 
   function apresentaGaragem() {
     alert(`Boas vindas à garagem de ${nome}`);
