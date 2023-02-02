@@ -24,10 +24,10 @@ body {
   height: 10%;
 } */
 
-main {
+/* main {
   min-height: 80%;
   display: flex;
-}
+} */
 
 .menu-vertical {
   flex-basis: 200px;

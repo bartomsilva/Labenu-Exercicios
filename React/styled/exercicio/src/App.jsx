@@ -6,7 +6,7 @@ import CardVideo from "./components/cardVideo/CardVideo";
 import { myVideos } from "./components/Data";
 import { useState } from "react";
 import { ContainerTrailer } from "./appstyled";
-import { TelaInteira, Header, Footer } from "./appstyled";
+import { TelaInteira, Main, Header, Footer } from "./appstyled";
 
 
 export default function App() {
@@ -38,7 +38,7 @@ export default function App() {
         </div>
       </ContainerTrailer>
 
-      <main>
+      <Main>
         <nav className="menu-vertical">
           <ul>
             <li className="botoes-meunu-vertical">Início</li>
@@ -52,8 +52,7 @@ export default function App() {
         <>
           <CardVideo myVideo={myVideos} visible={visivel} setView={setVisivel} />
         </>
-
-      </main>
+      </Main>
 
       <Footer>
         <h4>Sucesso não vem, temos que ir buscar!</h4>

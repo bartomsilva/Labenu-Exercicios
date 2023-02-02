@@ -9,13 +9,14 @@ export const GlobalStyled = createGlobalStyle`
 
     }
     
-    body {
-         width: 100vw;
-         max-width: 100vw;
-    }
     #root {
-        width: 100vw;
+        /* width: 100%;
+        height: 100%; */
         border: 5px solid green;
     }
     
+    /* body {
+         width: 100%;
+         height: 100%;         
+    } */
 `
