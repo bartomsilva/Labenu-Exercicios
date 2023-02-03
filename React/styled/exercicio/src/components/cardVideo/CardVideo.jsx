@@ -1,5 +1,7 @@
 import InfoUser from "../infosUsuario/InfosUsuario";
 import { useId } from 'react';
+import { PainelDeVideos,BoxPaginaPrincipal, Cover } from "./styled";
+import { }  from './styled'
 
 export default function Cardvideo(props) {
 
@@ -14,15 +16,15 @@ export default function Cardvideo(props) {
     }
 
     return (
-        <section className="painel-de-videos">
+        <PainelDeVideos>
             {props.myVideo.map((video, index) => (
-                <div id={"i" + index} className="box-pagina-principal" key={useId()}>
-                    <img className='cover' src={video.image} alt="" onClick={(event) => reproduzVideo(event)}/>
+                <BoxPaginaPrincipal id={"i" + index} key={useId()}>
+                    <Cover src={video.image} alt="" onClick={(event) => reproduzVideo(event)}/>
                     <h4>{video.filmTitle}</h4>
                     <InfoUser info={video} />
-                </div>
+                </BoxPaginaPrincipal>
             ))}
 
-        </section>
+        </PainelDeVideos>
     )
 }

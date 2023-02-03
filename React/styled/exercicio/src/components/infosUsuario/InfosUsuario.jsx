@@ -1,9 +1,11 @@
-export default function InfosUsuario(props){
+import { InfoUser } from "./styled"
 
+export default function InfosUsuario(props){
+    
     return (
-        <div id='infoUser'>
+        <InfoUser>
             <span>{props.info.authorName} </span>
             <img id='autor' src={props.info.authorPhoto} alt="author photo" /> 
-        </div>
+        </InfoUser>
     )
 }

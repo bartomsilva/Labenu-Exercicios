@@ -1,13 +1,12 @@
-import React from "react";
-import "./styles.css";
-import { GlobalStyled } from "./GlobalStyled";
-import imgBtnClose from './assets/close.png'
+import { React, useState } from "react";
 import CardVideo from "./components/cardVideo/CardVideo";
+import imgBtnClose from './assets/close.png'
 import { myVideos } from "./components/Data";
-import { useState } from "react";
-import { ContainerTrailer } from "./appstyled";
-import { TelaInteira, Main, Header, Footer } from "./appstyled";
-
+// import { ContainerTrailer, ImgBtn, Control } from "./appstyled";
+// import { TelaInteira, Main, Header, Footer,Video } from "./appstyled";
+// import { MenuVertical } from "./appstyled";
+// import { BotoesMeunuVertical } from "./appstyled";
+import * as S from './appstyled'
 
 export default function App() {
 
@@ -15,51 +14,52 @@ export default function App() {
 
   function closeMovie() {
     document.querySelector("#video").innerHTML = ""
-    document.querySelector('#container-trailer').classList.toggle('hide')
     document.querySelector('body').classList.toggle('fix')
     setVisivel(false)
   }
 
 
   return (
-    <TelaInteira>
+    <S.TelaInteira>
 
-      <Header>
-        <span id="foo"></span>
+      <S.Header>
         <h1>LabeTube</h1>
         <input type="text" placeholder="Busca" id="campoDeBusca" />
-      </Header>
+      </S.Header>
+      
+      <span id="foo"></span>
 
-      <ContainerTrailer ver={visivel} id="container-trailer">
-        <div id='control'>
-          <div id="video">
-          </div>
-          <img className="btnClose" onClick={closeMovie} src={imgBtnClose} />
-        </div>
-      </ContainerTrailer>
+      <S.ContainerTrailer ver={visivel}>
+        
+        <S.Control>          
+          <S.Video id="video"></S.Video>
+          <S.ImgBtn onClick={closeMovie} src={imgBtnClose}/>            
+        </S.Control>
 
-      <Main>
-        <nav className="menu-vertical">
+      </S.ContainerTrailer>
+
+      <S.Main>
+        <S.MenuVertical>
           <ul>
-            <li className="botoes-meunu-vertical">Início</li>
-            <li className="botoes-meunu-vertical">Em alta</li>
-            <li className="botoes-meunu-vertical">Inscrições</li>
+            <S.BotoesMeunuVertical>Início</S.BotoesMeunuVertical>
+            <S.BotoesMeunuVertical>Em alta</S.BotoesMeunuVertical>
+            <S.BotoesMeunuVertical>Inscrições</S.BotoesMeunuVertical>
             <hr />
-            <li className="botoes-meunu-vertical">Originais</li>
-            <li className="botoes-meunu-vertical">Histórico</li>
+            <S.BotoesMeunuVertical>Originais</S.BotoesMeunuVertical>
+            <S.BotoesMeunuVertical>Histórico</S.BotoesMeunuVertical>
           </ul>
-        </nav>
+        </S.MenuVertical>
         <>
           <CardVideo myVideo={myVideos} visible={visivel} setView={setVisivel} />
         </>
-      </Main>
+      </S.Main>
 
-      <Footer>
+      <S.Footer>
         <h4>Sucesso não vem, temos que ir buscar!</h4>
         <h4>OZEMELA é top das galáxias!</h4>
-      </Footer>
+      </S.Footer>
 
-    </TelaInteira>
+    </S.TelaInteira>
   );
 }
 

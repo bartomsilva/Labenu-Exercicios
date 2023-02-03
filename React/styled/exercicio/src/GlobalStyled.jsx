@@ -6,17 +6,14 @@ export const GlobalStyled = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+    }
+        
+    body {
+        height: 100vh;
+        width: 100%;  
+    }
 
+    body.fix { 
+        position: fixed; top: 0; left: 0; 
     }
-    
-    #root {
-        /* width: 100%;
-        height: 100%; */
-        border: 5px solid green;
-    }
-    
-    /* body {
-         width: 100%;
-         height: 100%;         
-    } */
 `
