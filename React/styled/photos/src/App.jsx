@@ -5,27 +5,26 @@ import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 export default function App() {
   const [count, setCount] = useState(0)
-  
+
   const buscaImagens = () => {
     const arrRetorno = []
     var nImagem = ''
-    for (let ind = 10; ind <= 100; ind++) {
-      nImagem = '../public/'+ind + 'p-.jpg'
-      nImagem?console.log("sim"):"não"
+    for (let ind = 1; ind <= 10; ind++) {
+      nImagem = '../public/' + ind + '.jpg'
       arrRetorno.push(nImagem)
     }
     return arrRetorno
 
   }
-  const arr =buscaImagens()
+  const arr = buscaImagens()
   console.log(arr)
 
   return (
     <>
-      {arr.map( e=> 
-        
-        <img src={e}></img> )   }               
-      
+      <div ic='container-photo'>
+        {arr.map(e => <img src={e}></img>)}
+      </div>
+
     </>
   )
 }
