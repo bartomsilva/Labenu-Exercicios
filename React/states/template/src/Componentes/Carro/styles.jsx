@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
 export const CarroContainer = styled.section`
-  width: 200px;
+  width: 350px;
   border: 1px solid black;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; */
   gap: 1rem;
   padding: 1rem;
   
