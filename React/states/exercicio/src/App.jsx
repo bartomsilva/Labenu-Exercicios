@@ -1,34 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import React, { useState } from 'react'
+import PokemonCard from './Components/PokemonCard/PokemonCard';
+import { pokeMons } from './Components/Data';
+import { FlexContainer, ContainerMon } from './stylesApp';
+import { PokemonName } from './Components/PokemonCard/styles';
 
-function App() {
-  const [count, setCount] = useState(0)
+function App() { 
+  
+  const [pokeMon, setPokeMon] =useState(pokeMons)
+  let nCard=pokeMons.length;
+  let index=0
 
-  return (
-    <div className="App">
+   return (<>
+
+
+    <FlexContainer>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+        <h1>Labmon</h1>
+      </div>      
+      <ContainerMon>
+        {
+           pokeMon.map ( (obj) => (
+           <PokemonCard pokeMon={pokeMon} setPokeMon={setPokeMon} id={obj.id}/>
+           )) 
+        }
+      </ContainerMon>
+    </FlexContainer>
+  </>
+
+  );
 }
 
-export default App
+export default App;
