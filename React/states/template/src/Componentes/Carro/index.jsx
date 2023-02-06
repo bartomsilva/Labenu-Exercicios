@@ -1,15 +1,17 @@
+
+import { Botao } from '../publicStyled'
 import { CarroContainer } from './styles'
 
-export function Carro({ modelo, cor, ano, flex, adicionadoPor },props) {
+export function Carro(props) {
   return (
-    <CarroContainer>
-      <h2>{modelo}</h2>
-      <ul>
-        <li>Cor: {cor}</li>
-        <li>Ano: {ano}</li>
-        <li>Flex: {flex ? 'Sim' : 'Não'}</li>
-        <li>Adicionado: {adicionadoPor}</li>
-      </ul>
-    </CarroContainer>
+      <CarroContainer>
+        <h2>{props.auto.model}</h2>
+        <ul>
+          <li>Cor: {props.auto.color}</li>
+          <li>Ano: {props.auto.year}</li>
+          <li>Flex: {props.auto.flex ? 'Sim' : 'Não'}</li>
+          <li>Adicionado: {props.addBy}</li>
+        </ul>
+      </CarroContainer>
   )
 }

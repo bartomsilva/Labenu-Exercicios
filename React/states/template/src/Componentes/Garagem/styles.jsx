@@ -1,11 +1,5 @@
 import styled from 'styled-components'
 
-export const Botao = styled.button`
-  border: 0;
-  background: orange;
-  padding: 10px;
-`
-
 export const GaragemContainer = styled.main`
   width: 100%;
   display: flex;
@@ -13,10 +7,12 @@ export const GaragemContainer = styled.main`
   align-items: center;
   justify-content: center;
   gap: 1rem;
-`
+  `
 
 export const Estacionamento = styled.section`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: auto;
   gap: 1rem;
+  text-align: center;
+
 `
