@@ -9,7 +9,6 @@ export const CardPro = styled.div`
     background-color: #fff;
     padding-top: 2rem;
 
-
     
     div:nth-child(2) {
         margin-top: 50px;

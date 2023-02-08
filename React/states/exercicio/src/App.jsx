@@ -1,17 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useId } from 'react'
 import PokemonCard from './Components/PokemonCard/PokemonCard';
 import { pokeMons } from './Components/Data';
 import { FlexContainer, ContainerMon } from './stylesApp';
-import { PokemonName } from './Components/PokemonCard/styles';
 
 function App() { 
   
   const [pokeMon, setPokeMon] =useState(pokeMons)
-  let nCard=pokeMons.length;
-  let index=0
 
    return (<>
-
 
     <FlexContainer>
       <div>
@@ -19,8 +15,8 @@ function App() {
       </div>      
       <ContainerMon>
         {
-           pokeMon.map ( (obj) => (
-           <PokemonCard pokeMon={pokeMon} setPokeMon={setPokeMon} id={obj.id}/>
+           pokeMon.map ( (obj,index) => (
+           <PokemonCard pokeMon={pokeMon} setPokeMon={setPokeMon} index={index} key={useId()}/>
            )) 
         }
       </ContainerMon>
