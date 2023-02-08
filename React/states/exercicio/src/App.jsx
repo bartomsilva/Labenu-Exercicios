@@ -3,12 +3,9 @@ import PokemonCard from './Components/PokemonCard/PokemonCard';
 import { pokeMons } from './Components/Data';
 import { FlexContainer, ContainerMon } from './stylesApp';
 
-function App() { 
-  
-  const [pokeMon, setPokeMon] =useState(pokeMons)
-
+export default function App() { 
+    const [pokeMon, setPokeMon] =useState(pokeMons)
    return (<>
-
     <FlexContainer>
       <div>
         <h1>Labmon</h1>
@@ -16,14 +13,15 @@ function App() {
       <ContainerMon>
         {
            pokeMon.map ( (obj,index) => (
-           <PokemonCard pokeMon={pokeMon} setPokeMon={setPokeMon} index={index} key={useId()}/>
+           <PokemonCard pokeMon={pokeMon} 
+                        setPokeMon={setPokeMon} 
+                        index={index} 
+                        key={useId()}/>
            )) 
         }
       </ContainerMon>
     </FlexContainer>
   </>
-
   );
 }
 
-export default App;

@@ -28,7 +28,6 @@ export const pokeMons = [
         "image": [`https://uploaddeimagens.com.br/images/004/330/005/original/Bulbasaur.png?1675549736` 
             ,`https://uploaddeimagens.com.br/images/004/330/007/original/Venusaur.png?1675549816`],
         "id": 2
-      },
- 
+      }, 
   ]
   

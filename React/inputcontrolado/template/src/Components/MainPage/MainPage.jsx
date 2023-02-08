@@ -14,15 +14,17 @@ function MainPage() {
 
   const handleChanceForm = (e) => {
     setForm({ ...form, [e.currentTarget.name]: e.currentTarget.value })
-    console.log(e.currentTarget.value)
   }
 
   function resetForm() {
+    console.log(`Nome: ${form.name}`)
+    console.log(`Idade: ${form.age}`)
+    console.log(`E-mail: ${form.email}`)
+    console.log(`Senha: não permitido`)
     const form = document.getElementById("form");
     form.reset();
     form.name.focus();
   }
-
 
 return (
   <MainContainer>
@@ -45,8 +47,8 @@ return (
         Senha:
         <Input type='password' name='pwd' id='pwd' value={form.pwd} onChange={handleChanceForm} />
       </label>
-      <button onClick={resetForm}>Enviar dados</button>
-    </Form>
+      <button type='button' onClick={resetForm}>Enviar dados</button>
+    </Form>    
   </MainContainer>
 )
 }

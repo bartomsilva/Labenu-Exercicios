@@ -14,9 +14,10 @@ export const Card = styled.div`
     width: 230px;
     height: 230px;
     padding: 20px;
-    animation: ${(props)=>!props.evolved?`live`:`evolved`} ${(props)=>!props.evolved?`3s`:`2.5s`} linear infinite;  }
+    animation: ${(props)=>!props.evolved?`noevolved`:`evolved`} 
+               ${(props)=>!props.evolved?`3s`:`2.5s`} linear infinite;  }
       
-    @keyframes live {
+    @keyframes noevolved {
         0%   {transform:rotate(0deg);}
         25%  {transform:rotate(20deg);}
         50%  {transform:rotate(-20);}

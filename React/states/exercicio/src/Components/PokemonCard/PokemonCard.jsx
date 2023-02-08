@@ -1,4 +1,3 @@
-import React from 'react'
 import { Card, PokemonName, PokemonType, EvolveButton } from './styles'
 
 const PokemonCard = (props) => {
@@ -9,9 +8,7 @@ const PokemonCard = (props) => {
     prevState[id].evolved = prevState[id].evolved ? false : true
     props.setPokeMon(prevState)
   }
-
   
-
   let { name, type, evolved, weigth, color, image, id } = props.pokeMon[props.index]
 
   return (
