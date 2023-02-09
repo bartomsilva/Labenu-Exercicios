@@ -3,51 +3,57 @@ import { MainContainer, Form, Input } from './styles.jsx'
 
 function MainPage() {
 
-  const mForm = {
-    name: "",
-    age: "",
-    email: "",
-    pwd: ""
+  // função que efetua a atualização dos estado.
+  const handleChanceForm = (e,setState) => {
+    setState(e.currentTarget.value)
   }
 
-  const [form, setForm] = useState(mForm)
+  // criando para cada ítem do formulário um state
+  const [name, setName] = useState('')
+  const [age,  setAge]  = useState('')
+  const [email,setEmail]= useState('')
+  const [pwd,  setPwd]  = useState('')
 
-  const handleChanceForm = (e) => {
-    setForm({ ...form, [e.currentTarget.name]: e.currentTarget.value })
+  // reset do formulário  
+  function resetForm(e) {
+    e.preventDefault
+    console.log(`Nome: ${name}`)
+    console.log(`Idade: ${age}`)
+    console.log(`E-mail: ${email}`)
+    console.log(`Senha: não permitido`);
+    [setName,setAge,setEmail,setPwd].forEach( e => e(''))
+
   }
 
-  function resetForm() {
-    console.log(`Nome: ${form.name}`)
-    console.log(`Idade: ${form.age}`)
-    console.log(`E-mail: ${form.email}`)
-    console.log(`Senha: não permitido`)
-    const form = document.getElementById("form");
-    form.reset();
-    form.name.focus();
+  const handleSubmit = (event) => {
+    event.preventDefault()
   }
 
 return (
   <MainContainer>
-
     <h2>Formulário de inscrição</h2>
-    <Form id='form'>
+    <Form id='form' onSubmit={handleSubmit}>
       <label htmlFor='name'>
         Nome:
-        <Input type='text' name='name' id='name' value={form.name} onChange={handleChanceForm} />
+        <Input type='text' name='name' id='name' 
+        value={name} onChange={(e)=>handleChanceForm(e,setName)}/>
       </label>
       <label htmlFor='age'>
         Idade:
-        <Input type='number' name='age' id='age' value={form.age} onChange={handleChanceForm} />
+        <Input type='text' name='age' id='age' 
+        value={age} onChange={(e)=>handleChanceForm(e,setAge)}/>
       </label>
       <label htmlFor='email'>
         Email:
-        <Input type='text' name='email' id='email' value={form.email} onChange={handleChanceForm} />
+        <Input type='email' name='email' id='email' value={email} onChange={(e)=>handleChanceForm(e,setEmail)} 
+        title="valid@email.com"
+        placeholder="valid@mail.com"/>
       </label>
       <label htmlFor='pwd'>
         Senha:
-        <Input type='password' name='pwd' id='pwd' value={form.pwd} onChange={handleChanceForm} />
+        <Input type='password' name='pwd' id='pwd' value={pwd} onChange={(e)=>handleChanceForm(e,setPwd)}/>
       </label>
-      <button type='button' onClick={resetForm}>Enviar dados</button>
+      <button type='submit' onClick={resetForm}>Enviar dados</button>
     </Form>    
   </MainContainer>
 )
