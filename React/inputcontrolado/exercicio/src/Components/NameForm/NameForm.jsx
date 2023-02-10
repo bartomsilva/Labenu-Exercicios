@@ -1,29 +1,39 @@
 import React from 'react'
-import { Form, Input} from '../MainPage/styles'
+import { Form, Input } from '../MainPage/styles'
 
 const NameForm = (props) => {
- 
+  const {
+    nome,
+    onChangeNome,
+    idade,
+    onChangeIdade,
+    email,
+    onChangeEmail,
+    emailConfirm,
+    onChangeEmailConfirm,
+    sendData
+  } = props
 
   return (
     <Form>
-        <label>
-          Nome:
-          <Input  placeholder="Nome" value={props.nome} onChange={props.onChangeNome}/>
-        </label>
-        <label>
-          Idade:
-          <Input  placeholder="Idade" value={props.idade} onChange={props.onChangeIdade}/>
-        </label>
-        <label>
-          E-mail:
-          <Input  placeholder="usuario@usuario.com" value={props.email} onChange={props.onChangeEmail}/>
-        </label>
-        <label>
-          Confirmação de e-mail:
-          <Input  placeholder="usuario@usuario.com" value={props.email} onChange={props.onChangeEmail}/>
-        </label>
-      <button onClick={props.sendData}>Enviar dados</button>
-      </Form>
+      <label>
+        Nome:
+        <Input placeholder="Nome" value={nome} onChange={onChangeNome} />
+      </label>
+      <label>
+        Idade:
+        <Input placeholder="Idade" value={idade} onChange={onChangeIdade} />
+      </label>
+      <label>
+        E-mail:
+        <Input placeholder="usuario@usuario.com" value={email} onChange={onChangeEmail} />
+      </label>
+      <label>
+        Confirmação de e-mail:
+        <Input placeholder="confirme seu email" value={emailConfirm} onChange={onChangeEmailConfirm} />
+      </label>
+      <button onClick={sendData}>Enviar dados</button>
+    </Form>
   )
 }
 

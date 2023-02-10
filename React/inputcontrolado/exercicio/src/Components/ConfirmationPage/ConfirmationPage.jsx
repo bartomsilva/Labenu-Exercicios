@@ -18,9 +18,9 @@ const ConfirmationPage = ({ data }) => {
         <p>Nome: {data.name}</p>
         <p>Idade: {data.age}</p>
         <p>E-mail: {data.email}</p>
-        <p>Data de Nascimento: {data.dataNascimento}</p>
-        <p>Telefone: {data.telefone}</p>
-        <p>Cidade: {data.cidade}</p>
+        <p>Data de Nascimento: {data.birthDate}</p>
+        <p>Telefone: {data.telephone}</p>
+        <p>Cidade: {data.city}</p>
       </ContainerData>
     </div>
   );

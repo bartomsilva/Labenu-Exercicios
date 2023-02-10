@@ -1,23 +1,32 @@
 import React from "react";
-import { Form } from "../MainPage/styles";
+import { Form, Input } from "../MainPage/styles";
 
 const ConfirmationForm = (props) => {
-  
+  const {
+    birthDate, 
+    onChangeBirthDate,
+    telephone,
+    onChangeTelephone,
+    city,
+    onChangeCity,
+    sendForm
+  } = props
+
   return (
     <Form>
       <label>
         Data de Nascimento:
-        <input placeholder="Data de nascimento" value={props.birthDate} onChange={props.onChangeBirthDate}/>
+        <Input placeholder="Data de nascimento" value={birthDate} onChange={onChangeBirthDate}/>
       </label>
       <label>
         Telefone:
-        <input placeholder="Telefone" value={props.telephone} onChange={props.onChangeTelephone} />
+        <Input placeholder="Telefone" value={telephone} onChange={onChangeTelephone} />
       </label>
       <label>
         Cidade:
-        <input placeholder="Cidade" value={props.city} onChange={props.onChangeCity}/>
+        <Input placeholder="Cidade" value={city} onChange={onChangeCity}/>
       </label>
-      <button onClick={props.sendForm}>Enviar dados</button>
+      <button onClick={sendForm}>Enviar dados</button>
     </Form >
   );
 };
