@@ -10,7 +10,7 @@ export const FormContainer = styled.div`
 
 export const Form = styled.div`
     width: 40vw;
-    height: 40vh;
+    height: 55vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
