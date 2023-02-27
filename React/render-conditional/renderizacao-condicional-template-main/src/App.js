@@ -22,14 +22,22 @@ function App() {
 
   const returnPage = () => {
 
-    if (pageActive === 'login') {
-      return <TelaLogin
+    switch (pageActive) {
+      
+      case 'login':
+        return <TelaLogin
+          setPageActive={setPageActive} />
+
+      case 'register':
+        return <TelaCadastro
+          setPageActive={setPageActive} />
+
+      case 'registered':
+        return <TelaUsuarioCadastrado />
+    
+      default:
+        return <TelaLogin
         setPageActive={setPageActive} />
-    } else if (pageActive === "register") {
-      return <TelaCadastro
-        setPageActive={setPageActive} />
-    } else if (pageActive === "registered") {
-      return <TelaUsuarioCadastrado />
     }
 
   }
