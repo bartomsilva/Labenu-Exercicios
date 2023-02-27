@@ -1,5 +1,8 @@
 
-function ScreenRegisterAddress(){
+import * as s from './styled'
+
+function ScreenRegisterAddress(props){
+    const {mudarTela} = props
 
 // Á página vai precisar ter:
 // Um input para endereço
@@ -9,31 +12,31 @@ function ScreenRegisterAddress(){
 // um botão para ser usado para passar a próxima página
 
     return (
-        <>
-            <form>
-                <label>
+        <s.FormContainer>
+            <h1>Complete seu Cadastro </h1>
+            <s.Form>
+                <s.Label>
                     Endereço:
-                    <input type="text"  />
-                </label>
-                <label>
+                    <s.Input type="text"  />
+                </s.Label>
+                <s.Label>
                     Número:
-                    <input type="text"  />
-                </label>
-                <label>
+                    <s.Input type="text"  />
+                </s.Label>
+                <s.Label>
                     Telefone:
-                    <input type="text"  />
-                </label>
-                <label>
+                    <s.Input type="tel"  />
+                </s.Label>
+                <s.Label>
                     Complemento:
-                    <input type="text"  />
-                </label>
-
-                <button>Confirmar</button>
-                <button>voltar</button>
-
-            </form>
+                    <s.Input type="text"  />
+                </s.Label>
+                <s.SendButton onClick={() => mudarTela(4)}>Cadastrar</s.SendButton>
+                <s.BackButton onClick={() => mudarTela(2)}>voltar</s.BackButton>
             
-        </>
+            </s.Form>
+            
+        </s.FormContainer>
     )
 }
 

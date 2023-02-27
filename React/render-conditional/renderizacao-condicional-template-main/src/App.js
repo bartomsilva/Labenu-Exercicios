@@ -18,7 +18,7 @@ const MainContainer = styled.main`
 
 function App() {
 
-  const [pageActive, setPageActive] = useState("register")
+  const [pageActive, setPageActive] = useState("login")
 
   const returnPage = () => {
 
