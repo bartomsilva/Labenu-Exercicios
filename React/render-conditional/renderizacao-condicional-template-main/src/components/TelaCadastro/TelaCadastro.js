@@ -6,21 +6,21 @@ function TelaCadastro(props) {
     <FormContainer>
       <h1>Cadastro </h1>
       <Form>
-        <StyledLabel htmlFor="titulo">
+        <StyledLabel htmlFor="name">
           Nome:
-          <Input id="titulo" />
+          <Input id="name" />
         </StyledLabel>
-        <StyledLabel htmlFor="foto">
+        <StyledLabel htmlFor="email">
           E-mail:
-          <Input id="foto" />
+          <Input id="email" />
         </StyledLabel>
-        <StyledLabel htmlFor="descricao">
+        <StyledLabel htmlFor="senha">
           Senha:
-          <Input id="descricao" />
+          <Input id="senha" />
         </StyledLabel>
-        <StyledLabel htmlFor="descricao">
+        <StyledLabel htmlFor="confsenha">
           Confirmação da senha:
-          <Input id="descricao" />
+          <Input id="confsenha" />
         </StyledLabel>
         <SendButton onClick={()=>setPageActive("registered")} >Cadastrar</SendButton>
         <BackToLoginButton onClick={()=>setPageActive('login')} >Já possuo um cadastro</BackToLoginButton>
