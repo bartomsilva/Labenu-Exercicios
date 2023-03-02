@@ -43,9 +43,7 @@ export const ListContainer = styled.div`
   flex-direction: column;
   overflow: auto;
   opacity: ${({removed})=> removed?"0.4":""};
-  p{
-    text-decoration: ${({removed})=> removed?"line-through":""};;
-  }
+  text-decoration: ${({removed})=> removed?"line-through":""};
 `;
 
 export const RemoveButton = styled.button`
