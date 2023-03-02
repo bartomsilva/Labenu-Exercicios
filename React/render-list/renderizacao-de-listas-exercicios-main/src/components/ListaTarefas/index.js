@@ -1,60 +1,73 @@
 import { useState } from "react";
 import {
   InputContainer,
-  ListaContainer,
-  ListaTarefasContainer,
-  Tarefa,
+  ListContainer,
+  ListTasksContainer,
+  Task,
   TaskInput,
   AddTaskButton,
   RemoveButton,
-  LinhaHorizontal
+  LineHorizontal
 } from "./styled";
 import bin from "../../assets/bin.png";
 
-export function ListaTarefas() {
-  const [lista, setLista] = useState(["Fazer exercícios", "Estudar React"]);
-  const [novaTarefa, setNovaTarefa] = useState("");
+export function ListTasks() {
+  const [list, setList] = useState(["Fazer exercícios", "Estudar React"]);
+  const [newTask, setNewTask] = useState("");
+  const [listRemovedTask, setListRemovedTask]=useState([])
 
-  const onChangeTarefa = (event) => {
-    setNovaTarefa(event.target.value);
+  const onChangeTask = (event) => {
+    setNewTask(event.target.value);
   };
 
-  const adicionaTarefa = () => {
-    const novaLista = [...lista, novaTarefa];
-    setLista(novaLista);
-    setNovaTarefa("");
+  const addTask = () => {
+    const newList = [...list, newTask];
+    setList(newList);
+    setNewTask("");
   };
 
-  const removeTarefa = (tarefa) => {
-    const listaFiltrada = lista.filter((item) => item !== tarefa);
-    setLista(listaFiltrada);
+  const removeTask = (task) => {
+    const listFiltrada = list.filter((item) => item !== task);
+    setList(listFiltrada);
+    setListRemovedTask([...listRemovedTask, task])
   };
-
   return (
-    <ListaTarefasContainer>
+    <ListTasksContainer>
       <InputContainer>
         <TaskInput
           placeholder="Digite aqui uma tarefa"
-          value={novaTarefa}
-          onChange={onChangeTarefa}
+          value={newTask}
+          onChange={onChangeTask}
+          onKeyDown={(key)=>key.code==='Enter'?addTask():""}
         />
-        <AddTaskButton onClick={adicionaTarefa}>Adicionar</AddTaskButton>
+        <AddTaskButton onClick={addTask}>Adicionar</AddTaskButton>
       </InputContainer>
-      <ListaContainer>
+      <ListContainer opacity={"1"}>
         <ul>
-          {lista.map((tarefa, index) => {
+          {list.map((task, index) => {
             return (
-              <Tarefa key={index}>
-                <p>{tarefa}</p>
-                <RemoveButton onClick={() => removeTarefa(tarefa)}>
+              <Task key={index}>
+                <p>{task}</p>
+                <RemoveButton onClick={() => removeTask(task)}>
                   <img src={bin} alt="" width="16px" />
                 </RemoveButton>
-              </Tarefa>
+              </Task>
             );
           })}
         </ul>
-      </ListaContainer>
-      <LinhaHorizontal/>
-    </ListaTarefasContainer>
+      </ListContainer>
+      <LineHorizontal/>
+      <ListContainer opacity={"0.4"}>
+        <ul>
+          {listRemovedTask.map((task, index) => {
+            return (
+              <Task key={index}>
+                <del>{task}</del>
+              </Task>
+            );
+          })}
+        </ul>
+      </ListContainer>
+    </ListTasksContainer>
   );
 }

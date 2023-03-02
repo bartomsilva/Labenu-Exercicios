@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ListaTarefasContainer = styled.div`
+export const ListTasksContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,11 +37,12 @@ export const AddTaskButton = styled.button`
   cursor: pointer;
 `;
 
-export const ListaContainer = styled.div`
+export const ListContainer = styled.div`
   width: 400px;
   display: flex;
   flex-direction: column;
   overflow: auto;
+  opacity: ${(props)=> props.opacity};
 `;
 
 export const RemoveButton = styled.button`
@@ -54,7 +55,7 @@ export const RemoveButton = styled.button`
   align-items: center;
 `;
 
-export const Tarefa = styled.li`
+export const Task = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -68,7 +69,7 @@ export const Tarefa = styled.li`
   }
 `;
 
-export const LinhaHorizontal = styled.hr`
+export const LineHorizontal = styled.hr`
   width: 100%;
   margin: 16px;
 `
