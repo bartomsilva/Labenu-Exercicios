@@ -1,6 +1,5 @@
 import { ListTasks } from "./components/ListaTarefas";
 import { GlobalStyle } from "./GlobalStyle";
-
 function App() {
   return (
     <div>
@@ -9,5 +8,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

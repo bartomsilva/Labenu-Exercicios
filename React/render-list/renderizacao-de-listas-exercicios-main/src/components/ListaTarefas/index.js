@@ -26,9 +26,8 @@ export function ListTasks() {
     setNewTask("");
   };
 
-  const removeTask = (task) => {
-    const listFiltrada = list.filter((item) => item !== task);
-    setList(listFiltrada);
+  const removeTask = (task,taskIndex) => {    
+    setList(list.filter((item,index) => index !== taskIndex));
     setListRemovedTask([...listRemovedTask, task])
   };
   return (
@@ -42,13 +41,13 @@ export function ListTasks() {
         />
         <AddTaskButton onClick={addTask}>Adicionar</AddTaskButton>
       </InputContainer>
-      <ListContainer opacity={"1"}>
+      <ListContainer>
         <ul>
           {list.map((task, index) => {
             return (
               <Task key={index}>
                 <p>{task}</p>
-                <RemoveButton onClick={() => removeTask(task)}>
+                <RemoveButton onClick={() => removeTask(task,index)}>
                   <img src={bin} alt="" width="16px" />
                 </RemoveButton>
               </Task>
@@ -57,12 +56,12 @@ export function ListTasks() {
         </ul>
       </ListContainer>
       <LineHorizontal/>
-      <ListContainer opacity={"0.4"}>
+      <ListContainer removed={true}>
         <ul>
           {listRemovedTask.map((task, index) => {
             return (
               <Task key={index}>
-                <del>{task}</del>
+                <p>{task}</p>
               </Task>
             );
           })}
