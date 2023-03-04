@@ -9,7 +9,7 @@ export const ListTasksContainer = styled.div`
   min-height: 100vh;
   box-shadow: -2px 3px 30px -7px rgba(0, 0, 0, 0.75);
   border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
+  border-bottom-left-radius: 15px;  
 `;
 
 export const InputContainer = styled.div`
@@ -21,6 +21,7 @@ export const InputContainer = styled.div`
   justify-content: center;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
+  margin-bottom: 20px;
 `;
 
 export const TaskInput = styled.input`
@@ -42,8 +43,6 @@ export const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
   overflow: auto;
-  opacity: ${({removed})=> removed?"0.4":""};
-  text-decoration: ${({removed})=> removed?"line-through":""};
 `;
 
 export const RemoveButton = styled.button`
@@ -65,6 +64,10 @@ export const Task = styled.li`
   border-radius: 10px;
   padding: 6px 8px;
   transition: background-color 0.3s;
+  opacity: ${({removed})=> removed?"0.4":""};
+  text-decoration: ${ ({removed}) => removed?"line-through":""};
+  color: ${({color})=> color};
+ 
   &:hover {
     background-color: lightblue;
   }
